@@ -46,32 +46,33 @@ cat > "$WEB_DIR/index.html" <<'EOF'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My EC2 Web Page</title>
+    <title>My Lab#2 EC2 Web Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Welcome to My EC2 Website</h1>
-        <p>Hosted on Amazon EC2 using Apache</p>
+        <h1>Welcome to My Lab#2 EC2 Website</h1>
+        <p>Demonstrating User Data Automation on Amazon EC2 using Apache</p>
     </header>
 
     <section id="about">
-        <h2>About Me</h2>
+        <h2>My Introduction</h2>
         <p>
-            My name is YOUR NAME. I am learning cloud computing,
-            Linux, Bash scripting, and AWS EC2.
+            My name is Troy. During my spare time I am learning cloud computing,
+            Linux, Bash scripting, and AWS EC2. My objective is to become a Cloud Engineer
+            and generate enough income to vacation yearly in places live the Maldives. 
         </p>
 
         <img
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80"
+            src="https://ik.imagekit.io/draggon59/Maldives_Ocean_Hut.png?updatedAt=1759796423759?auto=format&fit=crop&w=900&q=80"
             alt="Cloud computing"
         >
     </section>
 
     <section id="project">
-        <h2>Project Description</h2>
+        <h2>CPG Lab#2 Description</h2>
         <p>
             This project demonstrates how a Bash startup script can
             automatically configure an EC2 server, install Apache,
@@ -82,12 +83,12 @@ cat > "$WEB_DIR/index.html" <<'EOF'
 
     <section id="contact">
         <h2>Contact / Footer</h2>
-        <p>Email: example@example.com</p>
+        <p>Email: cpg_fundamentals@example.com</p>
         <p>Thank you for visiting my EC2 website!</p>
     </section>
 
     <footer>
-        <p>&copy; 2026 YOUR NAME</p>
+        <p>&copy; 2026 Troy's Lab#2</p>
     </footer>
 
 </body>
@@ -199,4 +200,4 @@ systemctl restart httpd
 # Finished
 # ------------------------------------------
 
-echo "EC2 startup script completed successfully."
+echo "Lab#2 EC2 startup script completed successfully."

@@ -1,0 +1,271 @@
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.10.20260105:
+  Version 2023.10.20260120:
+  Version 2023.10.20260202:
+  Version 2023.10.20260216:
+  Version 2023.10.20260302:
+  Version 2023.10.20260325:
+  Version 2023.10.20260330:
+  Version 2023.11.20260406:
+  Version 2023.11.20260413:
+  Version 2023.11.20260427:
+  Version 2023.11.20260505:
+  Version 2023.11.20260509:
+  Version 2023.11.20260511:
+  Version 2023.11.20260514:
+  Version 2023.11.20260526:
+  Version 2023.12.20260608:
+  Version 2023.12.20260611:
+  Version 2023.12.20260622:
+  Version 2023.12.20260629:
+  Version 2023.12.20260706:
+  Version 2023.12.20260710:
+  Version 2023.12.20260720:
+  Version 2023.12.20260724:
+  Version 2023.12.20260727:
+  Version 2023.12.20260803:
+  Version 2023.12.20260817:
+  Version 2023.12.20260831:
+  Version 2023.9.20251105:
+  Version 2023.9.20251110:
+  Version 2023.9.20251117:
+  Version 2023.9.20251208:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-10-117-1-89 ~]$ sudo systemctl status httpd
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Mon 2026-08-31 22:14:15 UTC; 12min ago
+       Docs: man:httpd.service(8)
+   Main PID: 4389 (httpd)
+     Status: "Total requests: 5; Idle/Busy workers 100/0;Requests/sec: 0.0065; Bytes served/sec:   6 B/sec"
+      Tasks: 230 (limit: 1106)
+     Memory: 16.2M
+        CPU: 531ms
+     CGroup: /system.slice/httpd.service
+             ├─ 4389 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4461 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4462 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4463 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4464 /usr/sbin/httpd -DFOREGROUND
+             └─26447 /usr/sbin/httpd -DFOREGROUND
+
+Aug 31 22:14:15 ip-10-117-1-89.us-west-2.compute.internal systemd[1]: Starting httpd.service - The Apache HTTP Server...
+Aug 31 22:14:15 ip-10-117-1-89.us-west-2.compute.internal systemd[1]: Started httpd.service - The Apache HTTP Server.
+Aug 31 22:14:15 ip-10-117-1-89.us-west-2.compute.internal httpd[4389]: Server configured, listening on: port 80
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ ls -la /var/www/html
+total 8
+drwxr-xr-x. 5 root root   88 Aug 31 22:14 .
+drwxr-xr-x. 5 root root   47 Aug 31 22:14 ..
+drwxr-xr-x. 2 root root   29 Aug 31 22:14 content
+drwxr-xr-x. 2 root root   29 Aug 31 22:14 credentials
+-rw-r--r--. 1 root root 1557 Aug 31 22:14 index.html
+-rw-r--r--. 1 root root  655 Aug 31 22:14 style.css
+drwxr-xr-x. 2 root root   29 Aug 31 22:14 utils
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ ls -la /var/www/html/content
+total 4
+drwxr-xr-x. 2 root root 29 Aug 31 22:14 .
+drwxr-xr-x. 5 root root 88 Aug 31 22:14 ..
+-rw-r--r--. 1 root root 20 Aug 31 22:14 placeholder.txt
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ ls -la /var/www/html/utils
+total 4
+drwxr-xr-x. 2 root root 29 Aug 31 22:14 .
+drwxr-xr-x. 5 root root 88 Aug 31 22:14 ..
+-rw-r--r--. 1 root root 18 Aug 31 22:14 placeholder.txt
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ ls -la /var/www/html/credentials
+total 4
+drwxr-xr-x. 2 root root 29 Aug 31 22:14 .
+drwxr-xr-x. 5 root root 88 Aug 31 22:14 ..
+-rw-r--r--. 1 root root 24 Aug 31 22:14 placeholder.txt
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ ls -la /var/www/backup
+total 16
+drwxr-xr-x. 2 root root   71 Aug 31 22:14 .
+drwxr-xr-x. 5 root root   47 Aug 31 22:14 ..
+-rw-r--r--. 1 root root 1557 Aug 31 22:14 index.html.bak
+-rwx------. 1 root root 5342 Aug 31 22:14 startup.sh.bak
+-rw-r--r--. 1 root root  655 Aug 31 22:14 style.css.bak
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ ls -la /var/log/archive
+total 32
+drwxr-xr-x.  2 root root    86 Aug 31 22:14 .
+drwxr-xr-x. 11 root root 16384 Aug 31 22:14 ..
+-rw-r--r--.  1 root root    21 Aug 31 22:14 archive1.log
+-rw-r--r--.  1 root root    21 Aug 31 22:14 archive2.log
+-rw-r--r--.  1 root root    21 Aug 31 22:14 archive3.log
+-rw-r--r--.  1 root root    21 Aug 31 22:14 archive4.log
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ ls -1 /var/log/archive | wc -l
+4
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ sudo find /var/www -maxdepth 3 -type f | sort
+/var/www/backup/index.html.bak
+/var/www/backup/startup.sh.bak
+/var/www/backup/style.css.bak
+/var/www/html/content/placeholder.txt
+/var/www/html/credentials/placeholder.txt
+/var/www/html/index.html
+/var/www/html/style.css
+/var/www/html/utils/placeholder.txt
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ sudo find /var/log/archive -type f | sort
+/var/log/archive/archive1.log
+/var/log/archive/archive2.log
+/var/log/archive/archive3.log
+/var/log/archive/archive4.log
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ cat /var/www/html/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Lab#2 EC2 Web Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to My Lab#2 EC2 Website</h1>
+        <p>Demonstrating User Data Automation on Amazon EC2 using Apache</p>
+    </header>
+
+    <section id="about">
+        <h2>My Introduction</h2>
+        <p>
+            My name is Troy. During my spare time I am learning cloud computing,
+            Linux, Bash scripting, and AWS EC2. My objective is to become a Cloud Engineer
+            and generate enough income to vacation yearly in places live the Maldives. 
+        </p>
+
+        <img
+            src="https://ik.imagekit.io/draggon59/Maldives_Ocean_Hut.png?updatedAt=1759796423759?auto=format&fit=crop&w=900&q=80"
+            alt="Cloud computing"
+        >
+    </section>
+
+    <section id="project">
+        <h2>CPG Lab#2 Description</h2>
+        <p>
+            This project demonstrates how a Bash startup script can
+            automatically configure an EC2 server, install Apache,
+            create a website, organize directories, and generate
+            backup and archive files.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact / Footer</h2>
+        <p>Email: cpg_fundamentals@example.com</p>
+        <p>Thank you for visiting my EC2 website!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Troy's Lab#2</p>
+    </footer>
+
+</body>
+</html>
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ cat /var/www/html/style.css
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eaf4f4;
+    color: #222;
+}
+
+header {
+    background-color: #12355b;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+section {
+    background-color: white;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #12355b;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #12355b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+[ec2-user@ip-10-117-1-89 ~]$ 
+[ec2-user@ip-10-117-1-89 ~]$ sudo systemctl status httpd --no-pager
+echo "===== WEBSITE FILES ====="
+find /var/www/html -maxdepth 2 -type f | sort
+echo "===== BACKUP FILES ====="
+find /var/www/backup -type f | sort
+echo "===== ARCHIVE FILES ====="
+find /var/log/archive -type f | sort
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Mon 2026-08-31 22:14:15 UTC; 23min ago
+       Docs: man:httpd.service(8)
+   Main PID: 4389 (httpd)
+     Status: "Total requests: 11; Idle/Busy workers 100/0;Requests/sec: 0.00797; Bytes served/sec:   8 B/sec"
+      Tasks: 230 (limit: 1106)
+     Memory: 16.9M
+        CPU: 911ms
+     CGroup: /system.slice/httpd.service
+             ├─ 4389 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4461 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4462 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4463 /usr/sbin/httpd -DFOREGROUND
+             ├─ 4464 /usr/sbin/httpd -DFOREGROUND
+             └─26447 /usr/sbin/httpd -DFOREGROUND
+
+Aug 31 22:14:15 ip-10-117-1-89.us-west-2.compute.internal systemd[1]: Starting httpd.service - The Apache HTTP Server...
+Aug 31 22:14:15 ip-10-117-1-89.us-west-2.compute.internal systemd[1]: Started httpd.service - The Apache HTTP Server.
+Aug 31 22:14:15 ip-10-117-1-89.us-west-2.compute.internal httpd[4389]: Server configured, listening on: port 80
+===== WEBSITE FILES =====
+/var/www/html/content/placeholder.txt
+/var/www/html/credentials/placeholder.txt
+/var/www/html/index.html
+/var/www/html/style.css
+/var/www/html/utils/placeholder.txt
+===== BACKUP FILES =====
+/var/www/backup/index.html.bak
+/var/www/backup/startup.sh.bak
+/var/www/backup/style.css.bak
+===== ARCHIVE FILES =====
+/var/log/archive/archive1.log
+/var/log/archive/archive2.log
+/var/log/archive/archive3.log
+/var/log/archive/archive4.log
+[ec2-user@ip-10-117-1-89 ~]$ 

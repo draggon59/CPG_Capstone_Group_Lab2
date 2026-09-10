@@ -66,7 +66,7 @@ cat > "$WEB_DIR/index.html" <<'EOF'
         </p>
 
         <img
-            src="https://ik.imagekit.io/draggon59/Maldives_Ocean_Hut.png?updatedAt=1759796423759?auto=format&fit=crop&w=900&q=80"
+            src="https://raw.githubusercontent.com/draggon59/CPG_Capstone_Group_Lab2/refs/heads/main/Ros_lab2/image/images.jpeg"
             alt="Cloud computing"
         >
     </section>

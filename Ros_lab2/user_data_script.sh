@@ -60,9 +60,8 @@ cat > "$WEB_DIR/index.html" <<'EOF'
     <section id="about">
         <h2>My Introduction</h2>
         <p>
-            My name is Ros. During my spare time I am learning cloud computing,
-            Linux, Bash scripting, and AWS EC2. My objective is to become a Cloud Engineer
-            and generate enough income to vacation yearly in places live the Maldives. (Rosmound edit this later)
+            My name is Ros. I am grateful to have joined Theo's classes, I aspire to become a Platform Engineer at the end of my studies
+            and generate enough income to to become a Commercial Real Estate owner in the future.
         </p>
 
         <img
@@ -74,10 +73,7 @@ cat > "$WEB_DIR/index.html" <<'EOF'
     <section id="project">
         <h2>CPG Lab#2 Description</h2>
         <p>
-            This project demonstrates how a Bash startup script can
-            automatically configure an EC2 server, install Apache,
-            create a website, organize directories, and generate
-            backup and archive files.
+            This is the EC2 automation lab2.
         </p>
     </section>
 
@@ -88,7 +84,7 @@ cat > "$WEB_DIR/index.html" <<'EOF'
     </section>
 
     <footer>
-        <p>&copy; 2026 Ros's Lab#2 (edit later Rosmound)</p>
+        <p>&copy; 2026 Ros's EC2 Bash scripting Lab#2</p>
     </footer>
 
 </body>

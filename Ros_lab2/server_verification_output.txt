@@ -1,0 +1,208 @@
+[ec2-user@ip-172-31-22-7 ~]$ sudo systemctl status httpd
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2026-09-15 00:09:45 UTC; 22min ago
+       Docs: man:httpd.service(8)
+   Main PID: 6048 (httpd)
+     Status: "Total requests: 4; Idle/Busy workers 100/0;Requests/sec: 0.00296; Bytes served/sec:   4 B/sec"
+      Tasks: 177 (limit: 1059)
+     Memory: 14.0M
+        CPU: 1.270s
+     CGroup: /system.slice/httpd.service
+             ├─6048 /usr/sbin/httpd -DFOREGROUND
+             ├─6144 /usr/sbin/httpd -DFOREGROUND
+             ├─6147 /usr/sbin/httpd -DFOREGROUND
+             ├─6220 /usr/sbin/httpd -DFOREGROUND
+             └─6222 /usr/sbin/httpd -DFOREGROUND
+
+Sep 15 00:09:45 ip-172-31-22-7.eu-west-2.compute.internal systemd[1]: Starting httpd.service - The Apache HTTP Server...
+Sep 15 00:09:45 ip-172-31-22-7.eu-west-2.compute.internal systemd[1]: Started httpd.service - The Apache HTTP Server.
+Sep 15 00:09:45 ip-172-31-22-7.eu-west-2.compute.internal httpd[6048]: Server configured, listening on: port 80
+[ec2-user@ip-172-31-22-7 ~]$ ls -la /var/www/html
+total 8
+drwxr-xr-x. 5 root root   88 Sep 15 00:09 .
+drwxr-xr-x. 5 root root   47 Sep 15 00:09 ..
+drwxr-xr-x. 2 root root   29 Sep 15 00:09 content
+drwxr-xr-x. 2 root root   29 Sep 15 00:09 credentials
+-rw-r--r--. 1 root root 1360 Sep 15 00:09 index.html
+-rw-r--r--. 1 root root  655 Sep 15 00:09 style.css
+drwxr-xr-x. 2 root root   29 Sep 15 00:09 utils
+[ec2-user@ip-172-31-22-7 ~]$ ls -la /var/www/html/content
+total 4
+drwxr-xr-x. 2 root root 29 Sep 15 00:09 .
+drwxr-xr-x. 5 root root 88 Sep 15 00:09 ..
+-rw-r--r--. 1 root root 20 Sep 15 00:09 placeholder.txt
+[ec2-user@ip-172-31-22-7 ~]$ ls -la /var/www/html/utils
+total 4
+drwxr-xr-x. 2 root root 29 Sep 15 00:09 .
+drwxr-xr-x. 5 root root 88 Sep 15 00:09 ..
+-rw-r--r--. 1 root root 18 Sep 15 00:09 placeholder.txt
+[ec2-user@ip-172-31-22-7 ~]$ ls -la /var/www/html/credentials
+total 4
+drwxr-xr-x. 2 root root 29 Sep 15 00:09 .
+drwxr-xr-x. 5 root root 88 Sep 15 00:09 ..
+-rw-r--r--. 1 root root 24 Sep 15 00:09 placeholder.txt
+[ec2-user@ip-172-31-22-7 ~]$ ls -la /var/www/backup
+total 16
+drwxr-xr-x. 2 root root   71 Sep 15 00:09 .
+drwxr-xr-x. 5 root root   47 Sep 15 00:09 ..
+-rw-r--r--. 1 root root 1360 Sep 15 00:09 index.html.bak
+-rwx------. 1 root root 5145 Sep 15 00:09 startup.sh.bak
+-rw-r--r--. 1 root root  655 Sep 15 00:09 style.css.bak
+[ec2-user@ip-172-31-22-7 ~]$ ls -la /var/log/archive
+total 32
+drwxr-xr-x.  2 root root    86 Sep 15 00:09 .
+drwxr-xr-x. 11 root root 16384 Sep 15 00:09 ..
+-rw-r--r--.  1 root root    21 Sep 15 00:09 archive1.log
+-rw-r--r--.  1 root root    21 Sep 15 00:09 archive2.log
+-rw-r--r--.  1 root root    21 Sep 15 00:09 archive3.log
+-rw-r--r--.  1 root root    21 Sep 15 00:09 archive4.log
+[ec2-user@ip-172-31-22-7 ~]$ ls -1 /var/log/archive | wc -l
+4
+[ec2-user@ip-172-31-22-7 ~]$ sudo find /var/www -maxdepth 3 -type f | sort
+/var/www/backup/index.html.bak
+/var/www/backup/startup.sh.bak
+/var/www/backup/style.css.bak
+/var/www/html/content/placeholder.txt
+/var/www/html/credentials/placeholder.txt
+/var/www/html/index.html
+/var/www/html/style.css
+/var/www/html/utils/placeholder.txt
+[ec2-user@ip-172-31-22-7 ~]$ sudo find /var/log/archive -type f | sort
+/var/log/archive/archive1.log
+/var/log/archive/archive2.log
+/var/log/archive/archive3.log
+/var/log/archive/archive4.log
+[ec2-user@ip-172-31-22-7 ~]$ cat /var/www/html/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ros Lab#2 EC2 Web Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Ros's Lab#2 EC2 Website</h1>
+        <p>Demonstrating User Data Automation on Amazon EC2 using Apache</p>
+    </header>
+
+    <section id="about">
+        <h2>My Introduction</h2>
+        <p>
+            My name is Ros. I am grateful to have joined Theo's classes, I aspire to become a Platform Engineer at the end of my studies
+            and generate enough income to to become a Commercial Real Estate owner in the future.
+        </p>
+
+        <img
+            src="https://raw.githubusercontent.com/draggon59/CPG_Capstone_Group_Lab2/refs/heads/main/Ros_lab2/image/images.jpeg"
+            alt="Cloud computing"
+        >
+    </section>
+
+    <section id="project">
+        <h2>CPG Lab#2 Description</h2>
+        <p>
+            This is the EC2 automation lab2.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact / Footer</h2>
+        <p>Email: cpg_fundamentals@example.com</p>
+        <p>Thank you for visiting my EC2 website!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ros's EC2 Bash scripting Lab#2</p>
+    </footer>
+
+</body>
+</html>
+[ec2-user@ip-172-31-22-7 ~]$ cat /var/www/html/style.css
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eaf4f4;
+    color: #222;
+}
+
+header {
+    background-color: #12355b;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+section {
+    background-color: white;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #12355b;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #12355b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+[ec2-user@ip-172-31-22-7 ~]$ sudo systemctl status httpd --no-pager
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2026-09-15 00:09:45 UTC; 26min ago
+       Docs: man:httpd.service(8)
+   Main PID: 6048 (httpd)
+     Status: "Total requests: 4; Idle/Busy workers 100/0;Requests/sec: 0.00253; Bytes served/sec:   3 B/sec"
+      Tasks: 177 (limit: 1059)
+     Memory: 14.0M
+        CPU: 1.465s
+     CGroup: /system.slice/httpd.service
+             ├─6048 /usr/sbin/httpd -DFOREGROUND
+             ├─6144 /usr/sbin/httpd -DFOREGROUND
+             ├─6147 /usr/sbin/httpd -DFOREGROUND
+             ├─6220 /usr/sbin/httpd -DFOREGROUND
+             └─6222 /usr/sbin/httpd -DFOREGROUND
+
+Sep 15 00:09:45 ip-172-31-22-7.eu-west-2.compute.internal systemd[1]: Starting httpd.service - The Apache HTTP Server...
+Sep 15 00:09:45 ip-172-31-22-7.eu-west-2.compute.internal systemd[1]: Started httpd.service - The Apache HTTP Server.
+Sep 15 00:09:45 ip-172-31-22-7.eu-west-2.compute.internal httpd[6048]: Server configured, listening on: port 80
+[ec2-user@ip-172-31-22-7 ~]$ echo "===== WEBSITE FILES ====="
+find /var/www/html -maxdepth 2 -type f | sort
+echo "===== BACKUP FILES ====="
+find /var/www/backup -type f | sort
+echo "===== ARCHIVE FILES ====="
+find /var/log/archive -type f | sort
+===== WEBSITE FILES =====
+/var/www/html/content/placeholder.txt
+/var/www/html/credentials/placeholder.txt
+/var/www/html/index.html
+/var/www/html/style.css
+/var/www/html/utils/placeholder.txt
+===== BACKUP FILES =====
+/var/www/backup/index.html.bak
+/var/www/backup/startup.sh.bak
+/var/www/backup/style.css.bak
+===== ARCHIVE FILES =====
+/var/log/archive/archive1.log
+/var/log/archive/archive2.log
+/var/log/archive/archive3.log
+/var/log/archive/archive4.log
+[ec2-user@ip-172-31-22-7 ~]$ 

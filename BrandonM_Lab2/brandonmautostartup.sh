@@ -53,7 +53,7 @@ cat > /var/www/html/index.html <<'EOF'
                 automation, and AWS.
             </p>
 
-            <img src="images/profile.jpg"
+            <img src="images/profile.png" alt="Profile image"
                  alt="Profile image">
         </section>
 
@@ -143,8 +143,8 @@ EOF
 
 # create a placeholder image file and download a small sample image for the website
 curl -L \
-    "https://placehold.co/400x300.jpg" \
-    -o /var/www/html/images/profile.jpg
+    "https://raw.githubusercontent.com/draggon59/CPG_Capstone_Group_Lab2/refs/heads/main/BrandonM_Lab2/images/PT_AllyCapitalizeMark.png" \
+    -o /var/www/html/images/profile.png
 
 mkdir -p /home/ec2-user/backups/web_backup
 
@@ -154,7 +154,7 @@ cp /var/www/html/index.html \
 cp /var/www/html/styles.css \
    /home/ec2-user/backups/web_backup/
 
-cp /var/www/html/images/profile.jpg \
+cp /var/www/html/images/profile.png \
    /home/ec2-user/backups/web_backup/
 
 mkdir -p /home/ec2-user/log-archive

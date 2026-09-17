@@ -53,20 +53,21 @@ cat > "$WEB_DIR/index.html" <<'EOF'
 <body>
 
     <header>
-        <h1>Welcome to My Lab#2 EC2 Website</h1>
-        <p>Demonstrating User Data Automation on Amazon EC2 using Apache</p>
+        <h1>Welcome to My EC2 Website</h1>
+        <p>Data Orchestration using Automation on Amazon EC2 using Apache</p>
     </header>
 
     <section id="about">
         <h2>My Introduction</h2>
         <p>
-            My name is Troy. During my spare time I am learning cloud computing,
-            Linux, Bash scripting, and AWS EC2. My objective is to become a Cloud Engineer
-            and generate enough income to vacation yearly in places live the Maldives. 
+            My name is Brandon Perry. This website was automatically
+        deployed to an Amazon EC2 instance using a Bash startup script. My goal is to become a cloud
+        engineer and learn how to automate tasks in the cloud using Bash scripting and other tools. I also
+        want the luxury of dual incmome streams, so I can retire early and travel the world. 
         </p>
 
         <img
-            src="https://ik.imagekit.io/draggon59/Maldives_Ocean_Hut.png?updatedAt=1759796423759?auto=format&fit=crop&w=900&q=80"
+            src="https://i.postimg.cc/NGHs2whk/beachengineer.png?updatedAt=1759796423759?auto=format&fit=crop&w=900&q=80"
             alt="Cloud computing"
         >
     </section>
@@ -74,10 +75,9 @@ cat > "$WEB_DIR/index.html" <<'EOF'
     <section id="project">
         <h2>CPG Lab#2 Description</h2>
         <p>
-            This project demonstrates how a Bash startup script can
-            automatically configure an EC2 server, install Apache,
-            create a website, organize directories, and generate
-            backup and archive files.
+            This project shows how a Bash startup script can automatically
+            configure an EC2 server, install Apache, create a website, organize directories, and 
+            generate backup and archive files.
         </p>
     </section>
 
@@ -88,7 +88,7 @@ cat > "$WEB_DIR/index.html" <<'EOF'
     </section>
 
     <footer>
-        <p>&copy; 2026 Troy's Lab#2</p>
+        <p>&copy; Copyright 2026 Brandon Perry's Lab.2</p>
     </footer>
 
 </body>

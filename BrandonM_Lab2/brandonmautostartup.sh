@@ -37,7 +37,7 @@ cat > /var/www/html/index.html <<'EOF'
 <body>
 
     <header>
-        <h1>Welcome to My EC2 Website</h1>
+        <h1>Brandon Morse's Automated EC2 Website</h1>
         <p>Hosted automatically using AWS EC2 User Data</p>
     </header>
 
@@ -70,8 +70,7 @@ cat > /var/www/html/index.html <<'EOF'
             </p>
 
             <p>
-                The purpose of this project is to demonstrate
-                cloud initialization, Linux directory management,
+                This lab shows Linux directory management,
                 Bash scripting, and web server configuration.
             </p>
         </section>
@@ -81,6 +80,7 @@ cat > /var/www/html/index.html <<'EOF'
             <h2>Contact</h2>
 
             <p>
+                Contact: Brandonmorsework@gmail.com
                 Thank you for visiting my website! Brandon btw!
             </p>
         </section>
